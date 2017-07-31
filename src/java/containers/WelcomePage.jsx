@@ -25,7 +25,7 @@ class WelcomePage extends React.Component {
 					<h1 className={styles.h1} >{this.props.data.topMsg}</h1>
 					<p className={styles.para}>{this.props.data.middleMsg}</p>
 					<h1 className={styles.h1} >{this.props.data.lowerMsg}</h1>
-					<Link to='./main'><button className={styles.btn}>Enter</button></Link>
+					<Link to='Resume//main'><button className={styles.btn}>Enter</button></Link>
 				</div>
 			</div>
 		);

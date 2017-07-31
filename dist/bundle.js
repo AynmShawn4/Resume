@@ -27763,7 +27763,7 @@ var WelcomePage = function (_React$Component) {
 					),
 					_react2.default.createElement(
 						_reactRouterDom.Link,
-						{ to: './main' },
+						{ to: 'Resume//main' },
 						_react2.default.createElement(
 							'button',
 							{ className: _welcomeStyle2.default.btn },
