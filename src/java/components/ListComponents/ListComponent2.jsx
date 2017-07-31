@@ -25,7 +25,6 @@ export default class ListComponent2 extends React.Component {
 	}
 
 	dropDown(){
-		console.log('called');
 		if (this.state.show){
 			this.setState({show: !this.state.show, text: 'Show more', 
 				dir: styles.downTriangle, comp: styles.dropCompUp});
@@ -49,7 +48,6 @@ export default class ListComponent2 extends React.Component {
 							</div>
 							<div className={this.state.dir} onClick={() => this.dropDown()}/> 
 						</div>;
-						console.log(this.state.comp);
 		const dropdownComp = <div className={this.state.comp}> 
 								<div className={styles.descrip}> {this.props.data.description}</div>
 								<div className={styles.website}><a href={this.props.data.website}> {this.props.data.website}</a> </div>
