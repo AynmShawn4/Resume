@@ -18,10 +18,14 @@ $break-large: 1024px;
 		@media only screen and (min-width: $break-large) {@content}
 	}
 }
+
 	
 	.div {
 		width: 100%;
 		background: rgba(0,0,0,0.7);
+		background: -webkit-linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.7),rgba(1,1,1,0.4) );
+		background: -o-linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.7),rgba(1,1,1,0.4) );
+		background: -moz-linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.7),rgba(1,1,1,0.4) );
 		background: linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.7),rgba(1,1,1,0.4) );
 		margin-top: 30px;
 		margin-bottom: 50px;
