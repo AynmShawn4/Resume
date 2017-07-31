@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+	
+	.div {
+		width: 900px;
+		margin: auto;
+		margin-top: 20px;
+		overflow: auto;
+		@include responsive(small) { 
+			width: 320px;
+		}
+		@include responsive(mid) {
+			width: 480px;
+		}
+		@include responsive(xmid) { 
+			width: 760px;
+		}
+	}
+
+	.title {
+		width: 90%;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding-left: 10px;
+		font-size: 1.1em;
+		font-family: $open-sans;
+		font-weight: bold;
+		background: #cbd0d6;
+		letter-spacing: 2px;
+		@include responsive(small) { 
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 0.7em;
+		}
+		@include responsive(mid) {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 0.9em;
+		}
+		@include responsive(xmid) { 
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.imgDiv {
+		width: 90%;
+		margin: auto;
+
+		margin-bottom: 20px;
+		@include responsive(small) { 
+			margin-bottom: 5px;
+		}
+		@include responsive(mid) {
+			margin-bottom: 10px;
+		}
+		@include responsive(xmid) { 
+			margin-bottom: 15px;
+		}
+		@include responsive(large){
+			min-height: 250px;
+			height: 20%;
+		}
+	}
+
+	.timeDiv {
+		width: 90%;
+		font-family: $roboto-slab;
+		font-weight: bold;
+		background: #756b74;
+		padding: 10px;
+		margin: auto;
+		margin-bottom: 20px;
+	}

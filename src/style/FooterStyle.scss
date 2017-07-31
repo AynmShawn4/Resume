@@ -1,0 +1,154 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+	
+	.div {
+		width: 100%;
+		background: rgba(0,0,0,0.7);
+		background: linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.7),rgba(1,1,1,0.4) );
+		margin-top: 30px;
+		margin-bottom: 50px;
+
+	}
+
+	.innerDiv {
+		height: 99%;
+		width: 900px;
+		max-width: 1200px;
+		margin: auto;
+		display: flex;
+		@include responsive(small) { 
+			width: 100%;
+		}
+		@include responsive(mid) {
+			width: 100%;
+		}
+		@include responsive(xmid) { 
+			width: 100%;
+		}
+	}
+
+	.icon {
+	    height: 60px;
+	    width: 60px;
+	    line-height: 60px;
+	    border: 2px solid white;
+	    border-radius: 50%; 
+	    background-color: rgba(0,0,0,0.3);
+	    color: white;
+	    text-align: center;
+	    font-size: 2em;
+	    font-family: $open-sans;
+	    text-decoration: none;
+	    margin: auto;
+	    user-select: none;
+	    @include responsive(small) { 
+			height: 40px;
+		    width: 40px;
+		    line-height: 40px;
+		    font-size: 1.2em;
+		}
+		@include responsive(mid) {
+			height: 45px;
+		    width: 45px;
+		    line-height: 45px;
+		    font-size: 1.4em;
+
+		}@include responsive(xmid) { 
+			height: 50px;
+		    width: 50px;
+		    line-height: 50px;
+		    font-size: 1.7em;
+		}
+	}
+
+	.rightDiv{
+		font-family: $open-sans;
+		font-size: 1.2em;
+		color: white;
+		width: 80%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.item {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.itemName {
+		color: #d0dced;
+		margin: auto;
+		margin-right: 10px;
+		font-family: $open-sans;
+		font-size: 1.2em;
+		@include responsive(small) { 
+			font-size: 0.5em;
+		}
+		@include responsive(mid) {
+			font-size: 0.7em;
+		}
+		@include responsive(xmid) { 
+			font-size: 0.9em;
+		}
+	}
+	.itemList{
+		display: flex;
+		align-item: center;
+		margin: 2px;
+		@include responsive(small) { 
+			margin: 0 2px 0 2px;
+		}
+		@include responsive(mid) {
+			margin: 0 3px 0 3px;
+		}
+		@include responsive(xmid) { 
+			margin: 0 4px 0 4px;
+		}
+	}
+	.imgIcon {
+		height: 30px;
+		@include responsive(small) { 
+			height: 20px;
+		}
+		@include responsive(mid) {
+			height: 25px;
+		}
+		@include responsive(xmid) { 
+			height: 30px;
+		}
+	}
+
+	.itemText {
+		margin: auto;
+		font-family: $open-sans;
+		color: #a5c4ef;
+		@include responsive(small) { 
+			font-size: 0.5em;
+		}
+		@include responsive(mid) {
+			font-size: 0.7em;
+		}
+		@include responsive(xmid) { 
+			font-size: 0.9em;
+		}
+	}

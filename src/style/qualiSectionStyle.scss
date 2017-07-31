@@ -1,0 +1,239 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+
+	.title {
+		font-family: $open-sans;
+		padding: 15px;
+		font-weight: bold;
+		background: #dbb267;
+		border-radius: 10px;
+		margin-bottom: 10px;
+		@include responsive(small) { 
+			font-size: 0.7em;
+			padding: 5px;
+		}
+		@include responsive(mid) {
+			font-size: 0.7em;
+			padding: 8px;
+		}
+		@include responsive(xmid) { 
+			font-size: 0.8em;
+			padding: 12px;
+		}
+	}
+
+	.name{
+		padding-top: 15px;
+		width: 20%;
+		word-wrap: break-word;
+		font-family: $open-sans;
+		font-weight: bold;
+		@include responsive(small) { 
+			width: 100%;
+			text-align: center;
+			padding: 0;
+			margin-bottom: 5px;
+		}
+		@include responsive(mid) {
+			width: 40%;
+			text-align: left;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+		@include responsive(xmid) { 
+			width: 20%;
+			padding: 0px;
+		}
+	}
+
+	.proficiency{
+		width: 80%;
+		min-height: 40px;
+		height: 4vh;
+		max-height: 50px;
+		margin: auto;
+		border-radius: 30px;
+		background: #757677;
+		text-align: center;
+	}
+
+	.progressBar {
+		font-family: $roboto-slab;
+		font-weight: bold;
+		font-size: 10px;;
+		width: 0%;
+		height: 50%;
+		background: #d9d7e8;
+		margin: 10px;
+		border-radius: 15px;
+		animation-delay: 1s;
+		animation-duration: 1s;
+		animation-name: progress1;
+		animation-fill-mode: forwards;
+	}
+
+	.progressBar1 {
+		@extend .progressBar;
+		background: #a09aea;
+		animation-name: progress2;
+	}
+
+	.progressBar2 {
+		@extend .progressBar;
+		background: #9454d3;
+		animation-name: progress3;
+	}
+
+	.progressBar3 {
+		@extend .progressBar;
+		background: #7a9ba3;
+		animation-name: progress4;
+	}
+
+	.progressBar4 {
+		@extend .progressBar;
+		background: #adb25e;
+		animation-name: progress5;
+	}
+
+
+	@mixin cal($width){
+			from {
+				width: 0%;
+				border-radius: 15px 0px 0px 15px;
+			}
+		@if $width == 100% {
+			to {
+				width: 96%;
+				border-radius: 15px ;
+			}
+		} @else if $width == 80% {
+			to {
+				width: 76%;
+				border-radius: 15px 0px 0px 15px;
+			}
+		} @else if $width == 60% {
+			to {
+				width: 57%;
+				border-radius: 15px 0px 0px 15px;
+			}
+		} @else if $width == 40% {
+			to {
+				width: 38%;
+				border-radius: 15px 0px 0px 15px;
+			}
+		} @else if $width == 20% {
+			to {
+				width: 19%;
+				border-radius: 15px 0px 0px 15px;
+			}
+		} 
+	}
+
+	@keyframes progress1 {
+		@include cal(20%);
+	}
+	@keyframes progress2 {
+		@include cal(40%);
+	}
+	@keyframes progress3 {
+		@include cal(60%);
+	}
+	@keyframes progress4 {
+		@include cal(80%);
+	}
+	@keyframes progress5 {
+		@include cal(100%);
+	}
+
+	.singleItem {
+		display: flex;
+		padding: 5px;
+		@include responsive(small) { 
+			flex-wrap: wrap;
+		}
+		@include responsive(mid) {
+		}
+		@include responsive(xmid) { 
+		}
+	}
+
+	.sectionDiv {
+		display: inline-block;
+		width: 60%;
+		background: #a09d8b;
+		border-radius: 10px;
+		margin: 15px;
+		animation-duration: 1s;
+		animation-name: slidein;
+		animation-fill-mode: forwards;
+		@include responsive(small) { 
+			width: 90%;
+		}
+		@include responsive(mid) {
+			width: 80%;
+		}
+		@include responsive(xmid) { 
+			width: 70%;
+		}
+	}
+
+	@keyframes slidein {
+		from {
+			margin-left:100%;
+		}
+		to {
+			margin-left: 20%;
+		}
+	}
+
+@media only screen and (max-width: $break-small - 1) {
+	@keyframes slidein{
+		from {
+			margin-left: 100%;
+		}
+		to {
+			margin-left: 5%;
+		}
+	}
+}
+
+@media only screen and (min-width: $break-small) and (max-width: $break-mid - 1){
+	@keyframes slidein{
+		from {
+			margin-left: 100%;
+		}
+		to {
+			margin-left: 10%;
+		}
+	}
+}
+
+@media only screen and (min-width: $break-mid) and (max-width: $break-large - 1){
+	@keyframes slidein{
+		from {
+			margin-left: 100%;
+		}
+		to {
+			margin-left: 15%;
+		}
+	}
+}

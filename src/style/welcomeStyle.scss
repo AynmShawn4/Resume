@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+
+	html, body{
+		height: 100%;
+		margin: 0;
+	}
+
+	.bodyDiv{
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.bgImg {
+		position: abosolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.textDiv {
+		background: rgba(0,0,0,0.7);
+		background: linear-gradient(to right, rgba(1,1,1,0.4), rgba(0,0,0,0.6),rgba(1,1,1,0.4) );
+		z-index: 100;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0px;
+		top: 30vh;
+		@include responsive(small) { 
+			top: 25vh; 
+		}
+		@include responsive(mid) {
+			top: 20vh;
+		}
+	}
+
+	.h1 {
+		font-family: $roboto-slab;
+		color: #a8a9ad;
+		font-size: 30px;
+		@include responsive(small) {
+			font-size: 20px;
+		}
+		@include responsive(mid) {
+			font-size: 25px;
+		}
+	}
+
+	.para {
+		font-family: $roboto-slab;
+		font-size: 55px;
+		font-weight: bold;
+		color: #a8a9ad;
+		@include responsive(small) {
+			font-size: 30px;
+		}
+		@include responsive(mid) {
+			font-size: 45px;
+		}
+	}
+
+	.btn {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 10px 30px 10px 30px;
+		border: 2px solid rgb(0,0,0);
+		background-color: rgba(194, 198, 206,0.1);
+		color: white;
+		font-family: $roboto-slab;
+		font-size: 25px;
+		&:hover {
+			color: rgb(150, 150, 150);
+		}
+		@include responsive(small) {
+			font-size: 20px;
+		}
+		@include responsive(mid) {
+			font-size: 25px;
+		}
+	}

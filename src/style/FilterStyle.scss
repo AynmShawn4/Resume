@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+
+	.div {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: 10px;
+	}
+
+	.filter{
+		font-family: $open-sans;
+		font-weight: bold;
+		font-size: 30px;
+		color: #846725;
+		margin: auto;
+		margin-right: 20px;
+
+	}
+
+
+	.tag {
+		font-family: $roboto-slab;
+		font-weight: bold;
+		padding:  10px;
+		display: flex;
+		align-items: center;
+		margin: auto;
+		margin: 5px 5px 5px 5px;
+		border-radius: 5px;
+		background: #aaa8a4;
+		user-select: none;
+		&:hover {
+			background: #6d6b67;
+			cursor: pointer;
+		}
+	}
+
+	.tagActive{
+		@extend .tag;
+		background: #6d6b67;
+		padding:  15px;
+	}
+
+	.img {
+		width: 40px;
+		height: 40px;
+		margin: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+		border-radius: 10px;
+		background: #aaa7a0;
+		&:hover{
+			background: #6d6656;
+			cursor: pointer;
+		}
+	}

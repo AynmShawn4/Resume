@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $brak-large) {@content}
+	}
+}
+
+.div {	
+	width: 900px;
+	margin: auto;
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	margin-top: 20px;
+	@include responsive(small) { 
+		width: 320px;
+	}
+	@include responsive(mid) {
+		width: 480px;
+	}
+	@include responsive(xmid) { 
+		width: 760px;
+	}
+}

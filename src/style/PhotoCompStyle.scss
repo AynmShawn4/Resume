@@ -1,0 +1,70 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+
+$break-small: 480px;
+$break-mid: 760px;
+$break-large: 1024px;
+
+@mixin responsive($media) {
+	@if $media == 'small' {
+		@media only screen and (max-width: $break-small - 1) {@content;}
+	} @else if $media == mid {
+		@media only screen and (min-width: $break-small ) and (max-width: $break-mid - 1) {@content}
+	}  @else if $media == xmid {
+		@media only screen and (min-width: $break-mid ) and (max-width: $break-large - 1) {@content}
+	} @else if $media == large {
+		@media only screen and (min-width: $break-large) {@content}
+	}
+}
+
+	.div{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.divModalOpen{
+		@extend .div;
+		overflow: hidden;
+	}
+	.imgSqare {
+		align-self: center;
+		width: 250px;
+		height: 250px;
+		margin: 20px 10px 10px 10px;
+		@include responsive(small) { 
+			width: 80%;
+			height: 256px;
+
+		}
+		@include responsive(mid) {
+			width: 45%;
+			height: 216px;
+		}
+		@include responsive(xmid) { 
+			width: 350px;
+			height: 350px;
+		}
+	}
+	.imgLong{
+		width: 250px;
+		height: 350px;
+		margin: 20px 10px 10px 10px;
+		@include responsive(small) { 
+			width: 80%;
+			height: 300px;
+		}
+		@include responsive(mid) {
+			width: 45%;
+			height: 260px;
+
+		}
+		@include responsive(xmid) {
+			width: 350px;
+			height: 420px; 
+		}
+	}
+
