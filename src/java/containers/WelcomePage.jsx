@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import {  } from '../actions';
 import styles from '../../style/welcomeStyle.scss';
 import bgImage from '../../../assets/MilkyWay.jpg';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function(state, ownProps) {
 	return {
-		data: state.welcome
+		data: state.welcome,
+		change: ownProps.change
 	}
 }
 
@@ -17,6 +18,9 @@ const mapDispatchToProps = function(dispatch) {
 }
 
 class WelcomePage extends React.Component {
+	change(){
+		this.props.change();
+	}
 	render(){
 		return (
 			<div className={styles.bodyDiv}>
@@ -32,7 +36,6 @@ class WelcomePage extends React.Component {
 	}
 
 }
-
 const WelcomePageContainer = connect(mapStateToProps, mapDispatchToProps)(WelcomePage);
 
-export default WelcomePageContainer;
+export default withRouter(WelcomePageContainer);

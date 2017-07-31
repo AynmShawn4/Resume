@@ -4,6 +4,7 @@ import { changePage, refresh, selectFilter} from '../actions';
 import Nav from '../components/NavigationBar.jsx';
 import SlidingComponent from '../components/SlidingComponent.jsx';
 import Footer from '../components/Footer.jsx';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function(state) {
 	return {
@@ -55,4 +56,4 @@ class Mainpage extends React.Component {
 
 const page = connect(mapStateToProps, mapDispatchToProps)(Mainpage);
 
-export default page;
+export default withRouter(page);
