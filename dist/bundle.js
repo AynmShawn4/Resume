@@ -25384,7 +25384,7 @@ var main = _react2.default.createElement(
    _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _WelcomePage2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _WelcomePage2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/main', component: _MainPage2.default })
    )
 );
@@ -27763,7 +27763,7 @@ var WelcomePage = function (_React$Component) {
 					),
 					_react2.default.createElement(
 						_reactRouterDom.Link,
-						{ to: '/main' },
+						{ to: './main' },
 						_react2.default.createElement(
 							'button',
 							{ className: _welcomeStyle2.default.btn },
