@@ -4,7 +4,6 @@ import { changePage, refresh, selectFilter} from '../actions';
 import Nav from '../components/NavigationBar.jsx';
 import SlidingComponent from '../components/SlidingComponent.jsx';
 import Footer from '../components/Footer.jsx';
-import bg from '../../../assets/background.jpg';
 
 const mapStateToProps = function(state) {
 	return {
@@ -33,7 +32,7 @@ const mapDispatchToProps = function(dispatch) {
 }
 
 const style = {
-	backgroundImage: 'url(' + bg + ')',
+	backgroundImage: 'url(./assets/background.jpg)',
 	backgroundAttachment: "fixed",
 	height: '100vh',
 	backgroundSize: 'cover',

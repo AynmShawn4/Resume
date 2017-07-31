@@ -46,7 +46,7 @@ export default class PhotoComponent extends React.Component {
 			if (!that.state.finished) {that.state.imgCol.push({
 				imgSrc: item.imgSrc, descrip: item.description, index: that.state.index}); that.state.index++;}
 				return <img key={index} onClick={() => that.openModal(item.index) }
-					className={item.type === 's'? styles.imgSqare : styles.imgLong} src={'../../../assets/' + item.imgSrc} />
+					className={item.type === 's'? styles.imgSqare : styles.imgLong} src={'./assets/' + item.imgSrc} />
 			});
 		return result;
 	}
@@ -57,7 +57,7 @@ export default class PhotoComponent extends React.Component {
 		return(
 			<div className={this.state.modalIsOpen === true? styles.divModalOpen : styles.div}>
 				<PhotoModal modalIsOpen={this.state.modalIsOpen} close={this.closeModal}
-				goLeft={this.goLeft} goRight={this.goRight} img={'../../../assets/' + item.imgSrc} description={item.descrip}/>
+				goLeft={this.goLeft} goRight={this.goRight} img={'./assets/' + item.imgSrc} description={item.descrip}/>
 				{toRender}
 		
 			</div>

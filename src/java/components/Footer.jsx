@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../style/FooterStyle.scss';
 
-const path = '../../../assets/FooterIcons/';
+const path = './assets/FooterIcons/';
 export default class Footer extends React.Component {
 	constructor(props){
 		super(props);

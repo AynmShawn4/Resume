@@ -20,7 +20,7 @@ export default class Filter extends React.Component {
 		return (
 			<div className={styles.div}>
 				<div className={styles.filter}> filter{'(' + this.props.filter.length +')'}: </div> {tags} 
-				<img className={styles.img} src='../../../assets/refresh.png' onClick={() => this.props.func.refresh(this.props.loc) }/>
+				<img className={styles.img} src='./assets/refresh.png' onClick={() => this.props.func.refresh(this.props.loc) }/>
 			</div>
 
 		);

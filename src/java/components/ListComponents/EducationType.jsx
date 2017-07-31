@@ -14,7 +14,7 @@ export default class EducationType extends React.Component {
 				<div className={styles.title}>{school.name}</div>
 				<div className={styles.imgDiv} > 
 					<a href={school.imgRef} onClick={() => false}> 
-						<img src={'../../../../assets/' + school.imgSrc} width='100%' height='100%' /> 
+						<img src={'./assets/' + school.imgSrc} width='100%' height='100%' /> 
 					</a>
 				</div>
 				<div className={styles.timeDiv}> {school.startTime} - {school.endTime}  </div>

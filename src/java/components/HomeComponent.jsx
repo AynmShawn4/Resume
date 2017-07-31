@@ -14,7 +14,7 @@ export default class HomeComponent extends React.Component {
 					 {quotes} - {this.props.data.quote.by}
 				</div>
 				<div className={styles.photoDiv}>
-					<img className={styles.photo} src={"../../../assets/" + this.props.data.img} />
+					<img className={styles.photo} src={"./assets/" + this.props.data.img} />
 				</div>
 				<Description data={this.props.data.description}/>
 			</div>

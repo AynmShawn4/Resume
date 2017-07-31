@@ -59,7 +59,7 @@ export default class ListComponent2 extends React.Component {
 			<div className={styles.div}>	
 				<div className={styles.title}>{this.props.data.name} </div>
 				<div className={styles.img}> 
-					<img  src={'../../../../assets/' + this.state.active} width="100%" height="100%"
+					<img  src={'./assets/' + this.state.active} width="100%" height="100%"
 					onMouseEnter={() => this.start()} onMouseLeave={() => this.stop()} /></div>
 				{showBar }
 				{dropdownComp}

@@ -20,7 +20,7 @@ class WelcomePage extends React.Component {
 	render(){
 		return (
 			<div className={styles.bodyDiv}>
-				<img src={bgImage} className={styles.bgImg}/>
+				<img src={'./assets/MilkyWay.jpg'} className={styles.bgImg}/>
 				<div className={styles.textDiv}>
 					<h1 className={styles.h1} >{this.props.data.topMsg}</h1>
 					<p className={styles.para}>{this.props.data.middleMsg}</p>
