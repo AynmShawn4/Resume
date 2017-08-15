@@ -32,7 +32,7 @@ const state = {
 				name: "Programming Langauges:",
 				list: [{name: 'Javascript', proficiency: 4}, {name: 'Java', proficiency: 4},
 						{name: 'C++', proficiency: '4'}, {name: 'Hadoop', proficiency: 3},
-						{name: 'Spark', proficiency: 3}, {name: 'SQL', proficiency: 2}]
+						{name: 'Spark', proficiency: 3}, {name: 'SQL', proficiency: 3}]
 			},
 			{
 				name: "Web Developing:",
